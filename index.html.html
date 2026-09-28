@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Fanny 🌷</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(180deg, #ffd6e8 0%, #fff0f5 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Georgia', serif;
+    overflow: hidden;
+  }
+
+  h1 {
+    font-size: 3rem;
+    color: #d6336c;
+    text-shadow: 2px 2px 6px rgba(214,51,108,0.3);
+    animation: aparecer 2s ease-out forwards, latido 2s ease-in-out 2s infinite;
+    opacity: 0;
+    margin-bottom: 40px;
+  }
+
+  @keyframes aparecer {
+    from { opacity: 0; transform: translateY(-30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes latido {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.08); }
+  }
+
+  .jardin {
+    display: flex;
+    gap: 30px;
+  }
+
+  .tulipan {
+    position: relative;
+    width: 40px;
+    animation: crecer 1.5s ease-out forwards, mecerse 3s ease-in-out infinite;
+    transform-origin: bottom center;
+    opacity: 0;
+  }
+
+  .tulipan:nth-child(1) { animation-delay: 0.2s, 1.5s; }
+  .tulipan:nth-child(2) { animation-delay: 0.4s, 1.7s; }
+  .tulipan:nth-child(3) { animation-delay: 0.6s, 1.9s; }
+  .tulipan:nth-child(4) { animation-delay: 0.8s, 2.1s; }
+  .tulipan:nth-child(5) { animation-delay: 1.0s, 2.3s; }
+
+  @keyframes crecer {
+    from { opacity: 0; transform: scaleY(0); }
+    to   { opacity: 1; transform: scaleY(1); }
+  }
+
+  @keyframes mecerse {
+    0%, 100% { transform: rotate(-4deg); }
+    50%      { transform: rotate(4deg); }
+  }
+
+  /* Flor del tulipán */
+  .flor {
+    width: 40px;
+    height: 45px;
+    background: #ff4d88;
+    border-radius: 50% 50% 20% 20% / 70% 70% 30% 30%;
+    position: relative;
+    box-shadow: inset -6px -4px 0 rgba(0,0,0,0.1);
+  }
+
+  .flor::before,
+  .flor::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 40px;
+    background: #ff2e6f;
+    border-radius: 50% 50% 30% 30%;
+  }
+  .flor::before { left: -8px; transform: rotate(-15deg); }
+  .flor::after  { right: -8px; transform: rotate(15deg); }
+
+  /* Tallo */
+  .tallo {
+    width: 4px;
+    height: 90px;
+    background: #2f9e44;
+    margin: 0 auto;
+    border-radius: 2px;
+  }
+
+  /* Hojas */
+  .hoja {
+    position: absolute;
+    width: 25px;
+    height: 12px;
+    background: #40c057;
+    border-radius: 0 100% 0 100%;
+    top: 60px;
+  }
+  .hoja.izq { left: -18px; transform: rotate(-30deg); }
+  .hoja.der { right: -18px; transform: rotate(210deg); }
+
+  .corazones {
+    position: absolute;
+    top: 20%;
+    font-size: 1.5rem;
+    animation: flotar 4s linear infinite;
+    opacity: 0.7;
+  }
+  .corazones:nth-child(1) { left: 10%; animation-delay: 0s; }
+  .corazones:nth-child(2) { left: 30%; animation-delay: 1s; }
+  .corazones:nth-child(3) { left: 60%; animation-delay: 2s; }
+  .corazones:nth-child(4) { left: 85%; animation-delay: 3s; }
+
+  @keyframes flotar {
+    0%   { transform: translateY(0) scale(0.8); opacity: 0; }
+    20%  { opacity: 0.8; }
+    100% { transform: translateY(-80vh) scale(1.3); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="corazones">💖</div>
+  <div class="corazones">🌸</div>
+  <div class="corazones">💗</div>
+  <div class="corazones">🌷</div>
+
+  <h1>Fanny</h1>
+
+  <div class="jardin">
+    <div class="tulipan"><div class="flor"></div><div class="tallo"></div><div class="hoja izq"></div><div class="hoja der"></div></div>
+    <div class="tulipan"><div class="flor" style="background:#ff6fa5"></div><div class="tallo"></div><div class="hoja izq"></div><div class="hoja der"></div></div>
+    <div class="tulipan"><div class="flor" style="background:#ffb3c6"></div><div class="tallo"></div><div class="hoja izq"></div><div class="hoja der"></div></div>
+    <div class="tulipan"><div class="flor" style="background:#e64980"></div><div class="tallo"></div><div class="hoja izq"></div><div class="hoja der"></div></div>
+    <div class="tulipan"><div class="flor" style="background:#ff87ab"></div><div class="tallo"></div><div class="hoja izq"></div><div class="hoja der"></div></div>
+  </div>
+
+</body>
+</html>
